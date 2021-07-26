@@ -1,6 +1,9 @@
-require_relative 'expense_report_solver'
+# frozen_string_literal: true
+
+require_relative "expense_report_solver"
 
 module AdventOfCode2020
+  # Strategy manager to handle the different solvers
   class DaySolver
     def initialize(day)
       @day = day
@@ -11,7 +14,7 @@ module AdventOfCode2020
       when 1
         ExpenseReportSolver.new.solve
       else
-        puts 'Unsupported day'
+        puts "Unsupported day"
       end
     end
 

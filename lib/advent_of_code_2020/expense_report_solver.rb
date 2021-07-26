@@ -1,8 +1,10 @@
-require_relative '../connectors/aoc_connector'
+# frozen_string_literal: true
+
+require_relative "../connectors/aoc_connector"
 
 module AdventOfCode2020
+  # Solver for day 1. Reads from an input file and find number matching up to 2020
   class ExpenseReportSolver
-
     def solve
       puts find_matching_couple.reduce(&:*)
     end
@@ -10,7 +12,7 @@ module AdventOfCode2020
     private
 
     def expense_report
-      @expense_report ||= ::Connectors::AocConnector.new(endpoint: 'day_1_input').parse_data.map(&:to_i)
+      @expense_report ||= ::Connectors::AocConnector.new(endpoint: "day_1_input").parse_data.map(&:to_i)
     end
 
     def find_matching_couple
