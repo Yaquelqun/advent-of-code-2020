@@ -18,7 +18,6 @@ module AdventOfCode2020
     end
 
     def sum_values_from_indexes(indexes)
-      # puts indexes.inspect
       values_at_indexes(indexes).reduce(:+)
     end
 
