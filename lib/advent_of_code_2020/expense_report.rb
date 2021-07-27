@@ -3,12 +3,12 @@
 require_relative "../connectors/aoc_connector"
 
 module AdventOfCode2020
-  # A class that handles the parsing of the input file and find the matching numbers
+  # A class that handles the parsing of the input file and provider helpers to navigate the report
   class ExpenseReport
     attr_reader :report
 
     def initialize
-      @report = ::Connectors::AocConnector.new(endpoint: "day_1_input").parse_data.map(&:to_i)
+      @report = ::Connectors::AocConnector.new(endpoint: "day_1_input").parse_data.map(&:to_i).sort.reverse
     end
 
     def first_index_under(target)
