@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module Helpers
+  # Helper class to maintain and auto increment an array of pointers
   class PointersArray
     attr_reader :values, :max_value
 

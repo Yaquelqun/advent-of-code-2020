@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require_relative 'expense_report'
-require_relative '../helpers/pointers_array'
+require_relative "expense_report"
+require_relative "../helpers/pointers_array"
 
 module AdventOfCode2020
   # Solver for day 1. Reads from an input file and find number matching up to 2020
@@ -15,7 +15,8 @@ module AdventOfCode2020
 
     def find_matching_numbers(target:, amount:)
       first_index = expense_report.first_index_under(target)
-      pointers = Helpers::PointersArray.new(first_number: first_index, length: amount, max_value: expense_report.report.length - 1)
+      pointers = Helpers::PointersArray.new(first_number: first_index, length: amount,
+                                            max_value: expense_report.report.length - 1)
 
       pointers.next_pointer while expense_report.sum_values_from_indexes(pointers.values) != target
 

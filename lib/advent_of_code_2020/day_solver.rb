@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'expense_report_parser'
+require_relative "expense_report_parser"
 
 module AdventOfCode2020
   # Strategy manager to handle the different solvers
