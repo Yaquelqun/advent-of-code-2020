@@ -9,7 +9,7 @@ module Connectors
 
     def parse_data
       file = File.open("#{__dir__}/../../inputs/#{endpoint}")
-      file.readlines.map(&:chomp).map(&:to_i)
+      file.readlines.map(&:chomp)
     end
 
     private
