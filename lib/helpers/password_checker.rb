@@ -1,10 +1,12 @@
+# frozen_string_literal: true
 
+# Class here to contain logic to check if a password is valid depending on a given strategy
 class PasswordChecker
-
   def initialize(raw_password_input, strategy)
     args = /(\d+)-(\d+) (.): (.*)/.match(raw_password_input)
     @occurence_range = (args[1].to_i..args[2].to_i)
-    @letter, @password = args[3], args[4]
+    @letter = args[3]
+    @password = args[4]
     @strategy = strategy
   end
 

@@ -1,12 +1,13 @@
-module AdventOfCode2020
-  class Terrain
+# frozen_string_literal: true
 
+module AdventOfCode2020
+  # class here to contain the terrain data and modification methods
+  class Terrain
     def initialize
       @map = ::Connectors::AocConnector.new(endpoint: "day_3_input").parse_data
       @map_height = @map.length
       @map_width = @map[0].length
     end
-
 
     def adapt_to_slope(right:, down:)
       @adapted_map = []
@@ -24,7 +25,7 @@ module AdventOfCode2020
     end
 
     def count_trees
-      adapted_map.map{ |line| line[0] }.join('').count('#')
+      adapted_map.map { |line| line[0] }.join("").count("#")
     end
 
     private

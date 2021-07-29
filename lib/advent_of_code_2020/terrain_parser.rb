@@ -1,6 +1,9 @@
-require_relative 'terrain'
+# frozen_string_literal: true
+
+require_relative "terrain"
 
 module AdventOfCode2020
+  # Solver for day 3
   class TerrainParser
     def initialize
       @terrain = Terrain.new
@@ -8,7 +11,7 @@ module AdventOfCode2020
 
     def solve
       puts "part 1: #{toboggan_tester(right: 3, down: 1)}"
-      puts "part 1: #{toboggan_multiplier(specs: [[1,1], [3,1], [5,1], [7,1], [1,2]])}"
+      puts "part 1: #{toboggan_multiplier(specs: [[1, 1], [3, 1], [5, 1], [7, 1], [1, 2]])}"
     end
 
     private
@@ -17,8 +20,8 @@ module AdventOfCode2020
 
     def toboggan_tester(right:, down:)
       terrain
-      .adapt_to_slope(right: right, down: down)
-      .count_trees
+        .adapt_to_slope(right: right, down: down)
+        .count_trees
     end
 
     def toboggan_multiplier(specs:)
