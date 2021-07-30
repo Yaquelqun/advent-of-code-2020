@@ -26,5 +26,9 @@ module AdventOfCode2020
     def method_missing(*_)
       puts "Unsupported day"
     end
+
+    def respond_to_missing?(method, *)
+      method =~ /solve_day_(\d+)/ || super
+    end
   end
 end
