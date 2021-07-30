@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
 require_relative "expense_report_parser"
 require_relative "password_list_parser"
 require_relative "terrain_parser"
 require_relative "passport_parser"
 
 module AdventOfCode2020
+  # contains all solvers classes and define methods to access them
   class SolversDictionary
     MAX_DAYS = 4
 
@@ -20,7 +23,7 @@ module AdventOfCode2020
       define_method("solve_day_#{day.next}") { SOLVER_CLASSES[day.next].new.solve }
     end
 
-    def method_missing(*args)
+    def method_missing(*_)
       puts "Unsupported day"
     end
   end

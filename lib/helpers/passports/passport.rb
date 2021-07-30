@@ -1,19 +1,22 @@
+# frozen_string_literal: true
+
 module Helpers
   module Passports
+    # model here to contain the passport data and validations
     class Passport
       REQUIRED_KEYS = %w[byr iyr eyr hgt hcl ecl pid].freeze
 
       def initialize(stringified_passport)
         @content = stringified_passport
-        .split
-        .map { |input| input.split(':') }
-        .to_h
+                   .split
+                   .map { |input| input.split(":") }
+                   .to_h
       end
 
-      def valid?(validation_method = 'weak')
+      def valid?(validation_method = "weak")
         REQUIRED_KEYS.each do |key|
           return false unless content.key?(key)
-          return false if validation_method == 'strong' && !send("valid_#{key}?", content[key])
+          return false if validation_method == "strong" && !send("valid_#{key}?", content[key])
         end
         true
       end
@@ -36,9 +39,9 @@ module Helpers
 
       def valid_hgt?(hgt)
         case hgt[-2..]
-        when 'cm'
+        when "cm"
           hgt[..-2].to_i.between?(150, 193)
-        when 'in'
+        when "in"
           hgt[..-2].to_i.between?(59, 76)
         else
           false
