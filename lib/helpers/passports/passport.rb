@@ -11,15 +11,9 @@ module Helpers
       end
 
       def valid?(validation_method = 'weak')
-        # puts "checking passport #{content}"
-
         REQUIRED_KEYS.each do |key|
           return false unless content.key?(key)
-
-          if validation_method == 'strong' && !send("valid_#{key}?", content[key])
-            # puts "invalid #{key}"
-            return false
-          end
+          return false if validation_method == 'strong' && !send("valid_#{key}?", content[key])
         end
         true
       end
@@ -51,12 +45,12 @@ module Helpers
         end
       end
 
-      HCL_REGEX = /\A#([a-f]|\d{6})\z/
+      HCL_REGEX = /\A#([a-f]|\d){6}\z/
       def valid_hcl?(hcl)
         HCL_REGEX.match?(hcl)
       end
 
-      ECL_VALUES = %w[amb blu brn gry grn hzl oth]
+      ECL_VALUES = %w[amb blu brn gry grn hzl oth].freeze
       def valid_ecl?(ecl)
         ECL_VALUES.include?(ecl)
       end
