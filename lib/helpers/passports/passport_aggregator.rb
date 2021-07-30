@@ -7,7 +7,7 @@ module Helpers
 
       def aggregate
         aggregation = raw_passports.each_with_object(['']) do |raw_passport, aggregated_passports|
-        aggregated_passports << '' if raw_passport.empty?
+          aggregated_passports << '' if raw_passport.empty?
 
           aggregated_passports.last << " #{raw_passport}"
         end
