@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require_relative "expense_report_parser"
-require_relative "password_list_parser"
-require_relative "terrain_parser"
-require_relative "passport_parser"
+require_relative "../solvers/expense_report_parser"
+require_relative "../solvers/password_list_parser"
+require_relative "../solvers/terrain_parser"
+require_relative "../solvers/passport_parser"
 
 module AdventOfCode2020
   # contains all solvers classes and define methods to access them

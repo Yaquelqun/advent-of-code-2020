@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "terrain"
+require_relative "../models/terrain"
 
 module AdventOfCode2020
   # Solver for day 3

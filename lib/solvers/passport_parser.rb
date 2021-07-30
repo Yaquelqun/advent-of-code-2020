@@ -2,7 +2,7 @@
 
 require_relative "../helpers/passports/passport_fetcher"
 require_relative "../helpers/passports/passport_aggregator"
-require_relative "../helpers/passports/passport"
+require_relative "../models/passport"
 
 module AdventOfCode2020
   # Solver for day 4

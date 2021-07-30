@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "expense_report"
+require_relative "../models/expense_report"
 require_relative "../helpers/pointers_array"
 
 module AdventOfCode2020
