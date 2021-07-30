@@ -3,6 +3,7 @@
 require_relative "expense_report_parser"
 require_relative "password_list_parser"
 require_relative "terrain_parser"
+require_relative "passport_parser"
 
 module AdventOfCode2020
   # Strategy manager to handle the different solvers
@@ -19,6 +20,8 @@ module AdventOfCode2020
         PasswordListParser.new.solve
       when 3
         TerrainParser.new.solve
+      when 4
+        PassportParser.new.solve
       else
         puts "Unsupported day"
       end
