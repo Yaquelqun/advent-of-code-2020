@@ -6,9 +6,9 @@ class Passport
 
   def initialize(stringified_passport)
     @content = stringified_passport
-                .split
-                .map { |input| input.split(":") }
-                .to_h
+               .split
+               .map { |input| input.split(":") }
+               .to_h
   end
 
   def valid?(validation_method = "weak")

@@ -23,7 +23,7 @@ class PassportParser
     raw_passports = Passports::PassportFetcher.new.fetch
 
     Passports::PassportAggregator.new(raw_passports)
-                                .aggregate
-                                .map { |passport_input| Passport.new(passport_input) }
+                                 .aggregate
+                                 .map { |passport_input| Passport.new(passport_input) }
   end
 end

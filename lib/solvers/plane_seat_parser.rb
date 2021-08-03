@@ -1,9 +1,10 @@
+# frozen_string_literal: true
 
 require_relative "../connectors/aoc_connector"
 require_relative "../models/seat"
 
+# Solver class for day 5
 class PlaneSeatParser
-
   def solve
     puts "part1: #{max_seat_id}"
     puts "part2: #{my_seat_id}"
@@ -17,15 +18,14 @@ class PlaneSeatParser
 
   def my_seat_id
     ids_range = (sorted_seat_ids.first..sorted_seat_ids.last)
-    (ids_range.to_a - sorted_seat_ids).first 
+    (ids_range.to_a - sorted_seat_ids).first
   end
 
   def sorted_seat_ids
     @sorted_seat_ids ||= ::Connectors::AocConnector.new(endpoint: "day_5_input")
-                                            .parse_data
-                                            .map { |seat_description| Seat.new(seat_description) }
-                                            .map(&:id)
-                                            .sort
-
+                                                   .parse_data
+                                                   .map { |seat_description| Seat.new(seat_description) }
+                                                   .map(&:id)
+                                                   .sort
   end
 end

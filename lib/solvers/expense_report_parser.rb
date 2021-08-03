@@ -15,7 +15,7 @@ class ExpenseReportParser
   def find_matching_numbers(target:, amount:)
     first_index = expense_report.first_index_under(target)
     pointers = PointersArray.new(first_number: first_index, length: amount,
-                                          max_value: expense_report.report.length - 1)
+                                 max_value: expense_report.report.length - 1)
 
     pointers.next_pointer while expense_report.sum_values_from_indexes(pointers.values) != target
 

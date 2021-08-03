@@ -1,5 +1,8 @@
-require 'byebug'
+# frozen_string_literal: true
 
+require "byebug"
+
+# Represents all answers of a group
 class GroupAnswer
   def initialize(group_positive_answers)
     @group_positive_answers = group_positive_answers
@@ -7,16 +10,16 @@ class GroupAnswer
 
   def common_positive_answers
     group_positive_answers
-    .first
-    .split('')
-    .select { |answer| group_contains?(answer) }
+      .first
+      .split("")
+      .select { |answer| group_contains?(answer) }
   end
 
   def total_positive_answers
     group_positive_answers
-    .join('')
-    .split('')
-    .uniq
+      .join("")
+      .split("")
+      .uniq
   end
 
   private

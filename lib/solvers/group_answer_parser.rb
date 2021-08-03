@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
 require_relative "../connectors/aoc_connector"
 require_relative "../helpers/group_answers/group_answer_aggregator"
 require_relative "../models/group_answer"
 
+# Solver class for day 6
 class GroupAnswerParser
   def solve
     puts "part 1: #{total_positive_answer_sum}"
@@ -25,9 +28,9 @@ class GroupAnswerParser
 
   def group_answers
     @group_answers ||= ::GroupAnswers::GroupAnswerAggregator
-      .new(parsed_input)
-      .aggregate
-      .map { |group_positive_answers| GroupAnswer.new(group_positive_answers) }
+                       .new(parsed_input)
+                       .aggregate
+                       .map { |group_positive_answers| GroupAnswer.new(group_positive_answers) }
   end
 
   def total_positive_answers
