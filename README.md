@@ -1,39 +1,17 @@
 # AdventOfCode2020
+Welcome, welcome to my solution repo for the riddles of the [advent of code](https://adventofcode.com/2020), 2020 edition
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/advent_of_code_2020`. To experiment with that code, run `bin/console` for an interactive prompt.
+The goal of the entire project is to try out a more Object Oriented way of coding and try - by adding heavy constraints to the way I usually code - to come up with a more elegant/efficient way of programming.
 
-TODO: Delete this and the text above, and describe your gem
+# Rules
+- All riddles should be solved inside of the application
+- I should only have to launch one line and then interact with the application (as if i ran a rails s)
+- Rubocop TO THE MAX (i set up rubocop and changed NOTHING)
+- Try to be [SOLID](https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) as much as my understanding of the SOLID principle allows me to be.
+- Follow Sandi Metz [5 rules for OOP](https://yiming.dev/blog/2017/08/23/sandi-metzs-rules-for-oop/) or at least the ones that are applicable to a pure Ruby application
 
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'advent_of_code_2020'
-```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install advent_of_code_2020
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/advent_of_code_2020.
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+# TODO
+- [ ] finish all riddles
+- [ ] add at least simple tests for each riddle 
+- [ ] add unit tests to each class using stub/mocking
+- [ ] keep on refactoring to make the code separated
