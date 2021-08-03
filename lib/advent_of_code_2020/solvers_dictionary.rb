@@ -5,6 +5,7 @@ require_relative "../solvers/password_list_parser"
 require_relative "../solvers/terrain_parser"
 require_relative "../solvers/passport_parser"
 require_relative "../solvers/plane_seat_parser"
+require_relative "../solvers/group_answer_parser"
 
 module AdventOfCode2020
   # contains all solvers classes and define methods to access them
@@ -14,7 +15,8 @@ module AdventOfCode2020
       2 => PasswordListParser,
       3 => TerrainParser,
       4 => PassportParser,
-      5 => PlaneSeatParser
+      5 => PlaneSeatParser,
+      6 => GroupAnswerParser
     }.freeze
 
     MAX_DAYS = SOLVER_CLASSES.count

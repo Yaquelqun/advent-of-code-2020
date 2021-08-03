@@ -1,0 +1,3 @@
+class GroupAnswerParser
+  
+end

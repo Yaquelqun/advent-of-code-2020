@@ -3,22 +3,20 @@
 require_relative "../connectors/aoc_connector"
 require_relative "../helpers/password_checker"
 
-module AdventOfCode2020
-  # Day 2 solver
-  class PasswordListParser
-    def solve
-      puts "part1: #{count_valid_passwords(strategy: "inclusion")}"
-      puts "part2: #{count_valid_passwords(strategy: "presence")}"
-    end
+# Day 2 solver
+class PasswordListParser
+  def solve
+    puts "part1: #{count_valid_passwords(strategy: "inclusion")}"
+    puts "part2: #{count_valid_passwords(strategy: "presence")}"
+  end
 
-    private
+  private
 
-    def count_valid_passwords(strategy:)
-      ::Connectors::AocConnector.new(endpoint: "day_2_input")
-                                .parse_data
-                                .map { |raw_password| PasswordChecker.new(raw_password, strategy) }
-                                .select(&:valid?)
-                                .count
-    end
+  def count_valid_passwords(strategy:)
+    ::Connectors::AocConnector.new(endpoint: "day_2_input")
+                              .parse_data
+                              .map { |raw_password| PasswordChecker.new(raw_password, strategy) }
+                              .select(&:valid?)
+                              .count
   end
 end
