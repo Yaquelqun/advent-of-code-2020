@@ -1,4 +1,3 @@
-require 'byebug'
 class Bag
   def initialize(description)
     @description = description

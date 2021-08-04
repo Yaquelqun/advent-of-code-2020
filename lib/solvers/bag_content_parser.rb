@@ -1,4 +1,3 @@
-require 'byebug'
 
 require_relative "../connectors/aoc_connector"
 require_relative "../helpers/bag_content_matrix"
