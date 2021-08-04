@@ -1,3 +1,4 @@
+require 'byebug'
 
 require_relative "../connectors/aoc_connector"
 require_relative "../helpers/bag_content_matrix"
@@ -20,7 +21,7 @@ class BagContentParser
   end
 
   def bags
-    @bags ||= AocConnector.new.get_input('day_7_input')
+    @bags ||= ::Connectors::AocConnector.new(endpoint: "day_7_input")
                               .parse_data
                               .map { |bag| Bag.new(bag) }
   end
