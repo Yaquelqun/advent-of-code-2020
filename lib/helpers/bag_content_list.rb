@@ -1,5 +1,7 @@
-class BagContentList
+# frozen_string_literal: true
 
+# contains all bags and logic for parent number
+class BagContentList
   def initialize(bags)
     @bags = bags
   end
@@ -23,9 +25,5 @@ class BagContentList
 
   def parent_colors_for(color:)
     bags.reject { |bag| bag.content[color].zero? }.map(&:color)
-  end
-
-  def contents_for(bag:)
-    bags.select { |bag| bag.color == bag.color }
   end
 end

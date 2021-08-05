@@ -1,8 +1,10 @@
+# frozen_string_literal: true
 
 require_relative "../connectors/aoc_connector"
 require_relative "../helpers/bag_content_list"
 require_relative "../models/bag"
 
+# Solver class for day 7
 class BagContentParser
   def solve
     puts("part1: #{shiny_bag_containers_count}")
@@ -12,11 +14,11 @@ class BagContentParser
   private
 
   def shiny_bag_containers_count
-    bag_content_list.containers_count_for(color: 'shiny gold')
+    bag_content_list.containers_count_for(color: "shiny gold")
   end
 
   def shiny_bag_max_content_count
-    bags.detect { |bag| bag.color == 'shiny gold' }
+    bags.detect { |bag| bag.color == "shiny gold" }
         .content_count(bags: bags) - 1
   end
 
@@ -26,7 +28,7 @@ class BagContentParser
 
   def bags
     @bags ||= ::Connectors::AocConnector.new(endpoint: "day_7_input")
-                              .parse_data
-                              .map { |bag| Bag.new(bag) }
+                                        .parse_data
+                                        .map { |bag| Bag.new(bag) }
   end
 end
