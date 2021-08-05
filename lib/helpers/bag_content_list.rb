@@ -1,4 +1,4 @@
-class BagContentMatrix
+class BagContentList
 
   def initialize(bags)
     @bags = bags
@@ -23,5 +23,9 @@ class BagContentMatrix
 
   def parent_colors_for(color:)
     bags.reject { |bag| bag.content[color].zero? }.map(&:color)
+  end
+
+  def contents_for(bag:)
+    bags.select { |bag| bag.color == bag.color }
   end
 end
